@@ -122,13 +122,13 @@ PUT /song_data
 
 Each song contains the following seven data fields.
 
-1.title - name of the song (string)
-2.Artist - Singer of the song (string)
-3.Genre - Genre of the song (string)
-4.Writter - Lyricist of the song (string)
-5.Music - Music composer of the song (string)
-6.Visits - Number of views for the song in original site (integer)
-7.Lyrics - song lyric (string)
+1.title - name of the song (string)  <br>
+2.Artist - Singer of the song (string)  <br>
+3.Genre - Genre of the song (string)  <br>
+4.Writter - Lyricist of the song (string)  <br>
+5.Music - Music composer of the song (string)  <br>
+6.Visits - Number of views for the song in original site (integer)  <br>
+7.Lyrics - song lyric (string)  <br>
 
 Data is scraped from the [https://sinhalasongbook.com/](https://sinhalasongbook.com/) site for educational purposes  and the English metadata fields were translated to Sinhala using the Google Translate API. The processed data are stored in the sinhala_songs.json. This corpus consists with 1050 song data.
 
