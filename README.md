@@ -1,12 +1,12 @@
 # Sinhala-lyrics-search-engine
 This repository contains the source code for Real-time Sinhala songs lyrics Search Engine With Node, Vue, and ElasticSearch.
 
-### Setting Up Elasticsearch
+## Setting Up Elasticsearch
 1. Download and run [Elasticsearch](https://www.elastic.co/downloads/elasticsearch).Start Elasticsearch locally on port 9200.
 2. Install [Kibana](https://www.elastic.co/downloads/kibana) for query operations(Optional).
 3. Install [ICU Analysis](https://www.elastic.co/guide/en/elasticsearch/plugins/current/analysis-icu.html) plugin.
 
-### Setting Up the Index
+## Setting Up the Index
 1. Create an index named `song_data` in the Elasticsearch executing following queries.
 ```
 PUT /song_data
@@ -118,7 +118,7 @@ PUT /song_data
     * Eg:- වික්ටර් රත්නායක සංගීතය හොදම ගීත 5  <br>
            ගුණදාස කපුගේ ගැයූ පැරණි පොප්ස් 10 <br>
 
-# Structure of the Data
+## Structure of the Data
 
 Each song contains the following seven data fields.
 
@@ -135,18 +135,20 @@ Data is scraped from the [https://sinhalasongbook.com/](https://sinhalasongbook.
 
 ## Querying Techniques
 
-* To classify the user queries into different types of serches a **Rule based classification** has been used. User input is tokenized and based on the keywords present, different rules are applied.
+###  Rule based classification
+To classify the user queries into different types of serches a Rule based classification has been used. User input is tokenized and based on the keywords present, different rules are applied.
 
 Eg: If the prase contains the word 'හොදම', 'ප්‍රසිද්ධ', sort the result based on number of visits and return the    best matching songs.  <br>
  If the phrase contains a number,return the best matching number of songs equal to the given number
 
-
-* This project uses **Boosting** as the main query optimization technique. According to the user input, keywords of each fields are identified and each field of a search is boosted by a certain value based on them.
+###  Boosting
+This project uses Boosting as the main query optimization technique. According to the user input, keywords of each fields are identified and each field of a search is boosted by a certain value based on them.
 
 Eg: If the phrase contains the word “ගායනා කල" artist field is boosted.  <br>
     If the phrase contains the word “ලියූ" writer field is boosted.  <br>
 
-* **Fuzzy search** queries are used to optimize the search by locating results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information. Therefore system returns results that contain terms similar to the search term, as measured by a Levenshtein edit distance even though search phares and spellings are not exactly the same.
+###  Fuzzy search
+Fuzzy search queries are used to optimize the search by locating results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information. Therefore system returns results that contain terms similar to the search term, as measured by a Levenshtein edit distance even though search phares and spellings are not exactly the same.
 
 * Aditionally, below query types and query options were also used.
     - [query_string query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-dsl-query-string-query) 
