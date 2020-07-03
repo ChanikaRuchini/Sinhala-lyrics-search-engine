@@ -138,13 +138,13 @@ Data is scraped from the [https://sinhalasongbook.com/](https://sinhalasongbook.
 ###  Rule based classification
 To classify the user queries into different types of serches a Rule based classification has been used. User input is tokenized and based on the keywords present, different rules are applied.
 
-<  Eg: If the prase contains the word 'හොදම', 'ප්‍රසිද්ධ', sort the result based on number of visits and return the    best matching songs.  <br>
+>   Eg: If the prase contains the word 'හොදම', 'ප්‍රසිද්ධ', sort the result based on number of visits and return the    best matching songs.  <br>
  If the phrase contains a number,return the best matching number of songs equal to the given number
 
 ###  Boosting
 This project uses Boosting as the main query optimization technique. According to the user input, keywords of each fields are identified and each field of a search is boosted by a certain value based on them.
 
-<  Eg: If the phrase contains the word “ගායනා කල" artist field is boosted.  <br>
+>   Eg: If the phrase contains the word “ගායනා කල" artist field is boosted.  <br>
     If the phrase contains the word “ලියූ" writer field is boosted.  <br>
 
 ###  Fuzzy search
