@@ -102,21 +102,21 @@ PUT /song_data
 ## Main Functionalities
 
 * Search songs by entering any phrase of the song.
-    * Eg:- නාමල් පිපිලා -Search by a song title.
+    * Eg:- නාමල් පිපිලා -Search by a song title.  <br>
            පහන තියා බුදු සාදුට හිමිදිරියේ - Search by a lyrics.
-* Search can be done based on artist, writer, musician or genre.
-     * Eg:- අමරදේව ගැයූ ගීත - Filter search based on artist.
-            සුනිල් ආරියරත්න ලියූ සින්දු - Filter search based on writter.
-            ක්ලැරන්ස් විජේවර්ධන සංගීතමය ගීත - Filter search based on music producer.
+* Search can be done based on artist, writer, musician or genre.  <br>
+     * Eg:- අමරදේව ගැයූ ගීත - Filter search based on artist.  <br>
+            සුනිල් ආරියරත්න ලියූ සින්දු - Filter search based on writter.  <br>
+            ක්ලැරන්ස් විජේවර්ධන සංගීතමය ගීත - Filter search based on music producer.  <br>
              පැරණි පොප්ස් - Filter search based song genre.
 * Synonyms support – Search phrases support synonyms of the keywords
-    * Eg:- If the input contains keyword 'ගායනා කරන','ගයන', 'ගායනා', '‌ගේ', 'හඩින්', 'කියනා', 'කිව්ව', 'කිව්', 'කිව', 'ගායනය','ගායනා කළා', 'ගායනා කල', 'ගැයූ', system identifies it as a search for an artist.
+    * Eg:- If the input contains keyword 'ගායනා කරන','ගයන', 'ගායනා', '‌ගේ', 'හඩින්', 'කියනා', 'කිව්ව', 'කිව්', 'කිව', 'ගායනය','ගායනා කළා', 'ගායනා කල', 'ගැයූ', system identifies it as a search for an artist.  <br>
         If the input contains keyword 'ලියා', 'ලියූ', 'ලිව්ව', 'ලිව්', 'රචනා', 'ලියා ඇති', 'රචිත', 'ලියන ලද', 'ලියන', 'හදපු', 'පද','රචනය', 'හැදූ', 'හැදුව', 'ලියන', 'ලියන්න', 'ලීව', 'ලියපු', 'ලියා ඇත', 'ලිඛිත', system identifies it as a search for an writter.
 * Range Queries – The project supports search queries in a given range by the user.
     * Eg:- අමරදේව හොදම ගීත 10 – The search engine returns the 10 best songs of Amaradewa sorted on the number of visits. 
 * Supports more advanced queries 
-    * Eg:- වික්ටර් රත්නායක සංගීතය හොදම ගීත 5
-           ගුණදාස කපුගේ ගැයූ පැරණි පොප්ස් 10 
+    * Eg:- වික්ටර් රත්නායක සංගීතය හොදම ගීත 5  <br>
+           ගුණදාස කපුගේ ගැයූ පැරණි පොප්ස් 10 <br>
 
 # Structure of the Data
 
@@ -137,14 +137,14 @@ Data is scraped from the [https://sinhalasongbook.com/](https://sinhalasongbook.
 
 * To classify the user queries into different types of serches a **rule based classification** has been used. User input is tokenized and based on the keywords present, different rules are applied.
 
-Eg: If the prase contains the word 'හොදම', 'ප්‍රසිද්ධ', sort the result based on number of visits and return the    best matching songs.
+Eg: If the prase contains the word 'හොදම', 'ප්‍රසිද්ධ', sort the result based on number of visits and return the    best matching songs.  <br>
  If the phrase contains a number,return the best matching number of songs equal to the given number
 
 
 * This project uses **Boosting** as the main query optimization technique. According to the user input, keywords of each fields are identified and each field of a search is boosted by a certain value based on them.
 
-Eg: If the phrase contains the word “ගායනා කල" artist field is boosted.
-    If the phrase contains the word “ලියූ" writer field is boosted.
+Eg: If the phrase contains the word “ගායනා කල" artist field is boosted.  <br>
+    If the phrase contains the word “ලියූ" writer field is boosted.  <br>
 
 * **fuzzy search** queries are used to optimize tthe search by locating results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information. Therefore system returns results that contain terms similar to the search term, as measured by a Levenshtein edit distance even though search phares and spellings are not exactly the same.
 
