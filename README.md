@@ -135,7 +135,7 @@ Data is scraped from the [https://sinhalasongbook.com/](https://sinhalasongbook.
 
 ## Querying Techniques
 
-* To classify the user queries into different types of serches a **rule based classification** has been used. User input is tokenized and based on the keywords present, different rules are applied.
+* To classify the user queries into different types of serches a **Rule based classification** has been used. User input is tokenized and based on the keywords present, different rules are applied.
 
 Eg: If the prase contains the word 'හොදම', 'ප්‍රසිද්ධ', sort the result based on number of visits and return the    best matching songs.  <br>
  If the phrase contains a number,return the best matching number of songs equal to the given number
@@ -146,7 +146,7 @@ Eg: If the prase contains the word 'හොදම', 'ප්‍රසිද්ධ'
 Eg: If the phrase contains the word “ගායනා කල" artist field is boosted.  <br>
     If the phrase contains the word “ලියූ" writer field is boosted.  <br>
 
-* **fuzzy search** queries are used to optimize tthe search by locating results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information. Therefore system returns results that contain terms similar to the search term, as measured by a Levenshtein edit distance even though search phares and spellings are not exactly the same.
+* **Fuzzy search** queries are used to optimize the search by locating results that are likely to be relevant to a search argument even when the argument does not exactly correspond to the desired information. Therefore system returns results that contain terms similar to the search term, as measured by a Levenshtein edit distance even though search phares and spellings are not exactly the same.
 
 * Aditionally, below query types and query options were also used.
     - [query_string query](https://www.elastic.co/guide/en/elasticsearch/reference/current/query-dsl-query-string-query.html#query-dsl-query-string-query) 
