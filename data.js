@@ -19,7 +19,7 @@ client.ping({
 
 // create a new index called scotch.io-tutorial. If the index has already been created, this function fails safely
 client.indices.create({
-      index: 'songs_data'
+      index: 'song_data'
   }, function(error, response, status) {
       if (error) {
           console.log(error);
@@ -40,7 +40,7 @@ var bulk = [];
 //second object is the data you want to index
 cities.forEach(city =>{
    bulk.push({index:{
-                 _index:"songs_lyrics", 
+                 _index:"song_data", 
                  _type:"songs_list",
              }          
          })

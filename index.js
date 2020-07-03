@@ -205,7 +205,7 @@ app.get('/search', function (req, res) {
     // perform the actual search passing in the index, the search query and the type
     client.search({
         //q: req.query.q,
-        index: 'songs_lyrics',
+        index: 'song_data',
         type: 'songs_list',
         body: body
     })
